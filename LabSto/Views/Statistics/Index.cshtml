@@ -1,0 +1,309 @@
+﻿@model LabSto.Controllers.StatisticsVM
+@{
+    ViewData["Title"] = "数据统计";
+}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="mb-0"><span class="text-primary fw-bold">数据统计</span></h4>
+        <small class="text-muted">实时掌握实验室试剂整体状况</small>
+    </div>
+    <span class="badge bg-light text-dark border">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        @DateTime.Now.ToString("yyyy年MM月dd日 HH:mm")
+    </span>
+</div>
+
+@if (Model.LowStockCount > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+        <strong>库存预警：</strong> 有 <strong>@Model.LowStockCount</strong> 种试剂库存低于最低库存线！
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:1px;">试剂种类</div>
+                        <div class="fw-bold display-6" style="color:#0d6efd;">@Model.TotalReagents</div>
+                        <div class="small text-muted">种</div>
+                    </div>
+                    <div class="rounded-circle bg-primary bg-opacity-10 p-3">
+                        <svg width="28" height="28" fill="#0d6efd" viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1a6 6 0 1 1 0 12A6 6 0 0 1 8 2zm0 1a5 5 0 1 0 0 10A5 5 0 0 0 8 3zm0 1a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:1px;">试剂柜</div>
+                        <div class="fw-bold display-6" style="color:#198754;">@Model.TotalCabinets</div>
+                        <div class="small text-muted">个</div>
+                    </div>
+                    <div class="rounded-circle bg-success bg-opacity-10 p-3">
+                        <svg width="28" height="28" fill="#198754" viewBox="0 0 16 16"><path d="M2 1.5A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v1a.5.5 0 0 1-1 0V1.5h-10A1.5 1.5 0 0 1 1.5 0v1A.5.5 0 0 1 1 1.5V1.5zM1 3v10a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 14.5 13V3H1z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:1px;">本月记录</div>
+                        <div class="fw-bold display-6" style="color:#6610f2;">@Model.ThisMonthRecords</div>
+                        <div class="small text-muted">条</div>
+                    </div>
+                    <div class="rounded-circle bg-purple bg-opacity-10 p-3" style="background:#f3e8ff;">
+                        <svg width="28" height="28" fill="#6610f2" viewBox="0 0 16 16"><path d="M3 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm-4-8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="card border-0 shadow-sm h-100 @(Model.LowStockCount > 0 ? "border-warning" : "")" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:1px;">库存预警</div>
+                        <div class="fw-bold display-6 @(Model.LowStockCount > 0 ? "text-warning" : "text-success")">@Model.LowStockCount</div>
+                        <div class="small text-muted">种试剂</div>
+                    </div>
+                    <div class="rounded-circle bg-warning bg-opacity-10 p-3">
+                        <svg width="28" height="28" fill="#ffc107" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="small text-muted text-uppercase fw-semibold mb-3" style="letter-spacing:1px;">本月入库/出库</div>
+                <div class="d-flex align-items-end gap-3">
+                    <div>
+                        <div class="text-success fw-bold fs-3">@Model.MonthInCount</div>
+                        <div class="small text-muted">入库</div>
+                    </div>
+                    <div>
+                        <div class="text-danger fw-bold fs-3">@Model.MonthOutCount</div>
+                        <div class="small text-muted">出库</div>
+                    </div>
+                    <div class="ms-auto">
+                        <div class="small text-muted">本周记录</div>
+                        <div class="fw-semibold">@Model.ThisWeekRecords</div>
+                    </div>
+                </div>
+                <hr />
+                <div class="small text-muted">近30天</div>
+                <div class="d-flex gap-4 mt-1">
+                    <span class="text-success">+ @Model.StockIn30Days</span>
+                    <span class="text-danger">- @Model.StockOut30Days</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="small text-muted text-uppercase fw-semibold mb-3" style="letter-spacing:1px;">试剂分类统计</div>
+                @if (Model.CategoryStats.Any())
+                {
+                    @foreach (var cat in Model.CategoryStats.Take(5))
+                    {
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-secondary rounded-pill">@cat.Category</span>
+                            <div class="w-50 bg-light rounded-pill" style="height:6px;">
+                                <div class="bg-primary rounded-pill" style="height:6px; width:@(Math.Min(100, cat.Count * 20))%"></div>
+                            </div>
+                            <small class="text-muted fw-semibold">@cat.Count 种</small>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted small">暂无分类数据</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+            <div class="card-body">
+                <div class="small text-muted text-uppercase fw-semibold mb-3" style="letter-spacing:1px;">本周使用排行</div>
+                @if (Model.TopReagents.Any())
+                {
+                    var rank = 1;
+                    @foreach (var item in Model.TopReagents)
+                    {
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            @if (rank == 1)
+                            {
+                                <span class="badge bg-warning text-dark rounded-circle" style="width:22px;height:22px;font-size:11px;">1</span>
+                            }
+                            else if (rank == 2)
+                            {
+                                <span class="badge bg-secondary rounded-circle" style="width:22px;height:22px;font-size:11px;">2</span>
+                            }
+                            else if (rank == 3)
+                            {
+                                <span class="badge" style="background:#cd7f32;color:white;border-radius:50%;width:22px;height:22px;font-size:11px;">3</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-light text-dark rounded-circle" style="width:22px;height:22px;font-size:11px;">@rank</span>
+                            }
+                            <span class="small fw-semibold text-truncate" style="max-width:100px;">@item.Name</span>
+                            <span class="badge bg-danger bg-opacity-10 text-danger ms-auto" style="font-size:10px;">出库 @item.OutCount 次</span>
+                        </div>
+                        rank++;
+                    }
+                }
+                else
+                {
+                    <p class="text-muted small">暂无使用记录</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-lg-7">
+        <div class="card border-0 shadow-sm" style="border-radius: 12px;">
+            <div class="card-header bg-white border-0 pb-0">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:1px;">最近操作记录</div>
+                    <a asp-controller="StockRecords" asp-action="Index" class="btn btn-sm btn-outline-primary">查看全部</a>
+                </div>
+            </div>
+            <div class="card-body pt-2">
+                @if (Model.RecentRecords.Any())
+                {
+                    <table class="table table-hover small mb-0">
+                        <thead>
+                            <tr class="text-muted small">
+                                <th>试剂</th>
+                                <th>类型</th>
+                                <th>数量</th>
+                                <th>操作人</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var r in Model.RecentRecords)
+                            {
+                                <tr>
+                                    <td class="fw-semibold text-truncate" style="max-width:120px;">@r.ReagentName</td>
+                                    <td>
+                                        @if (r.Type == "入库")
+                                        {
+                                            <span class="badge bg-success bg-opacity-10 text-success">入库</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger bg-opacity-10 text-danger">出库</span>
+                                        }
+                                    </td>
+                                    <td>@r.Quantity</td>
+                                    <td class="text-muted">@r.Operator</td>
+                                    <td class="text-muted">@r.CreateTime.ToString("MM-dd HH:mm")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p class="text-center text-muted py-4">暂无操作记录</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="card border-0 shadow-sm" style="border-radius: 12px;">
+            <div class="card-header bg-white border-0 pb-0">
+                <div class="small text-muted text-uppercase fw-semibold" style="letter-spacing:1px;">试剂柜使用情况</div>
+            </div>
+            <div class="card-body pt-2">
+                @if (Model.CabinetUtilization.Any())
+                {
+                    @foreach (var c in Model.CabinetUtilization)
+                    {
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <span class="fw-semibold">@c.CabinetNo</span>
+                                <span class="badge bg-light text-dark ms-1" style="font-size:10px;">@c.StorageType</span>
+                            </div>
+                            <span class="small text-muted">@c.UsedCount / @c.Capacity</span>
+                        </div>
+                        <div class="bg-light rounded-pill mb-3" style="height:8px;">
+                            @{
+                                var pct = c.Capacity > 0 ? c.UsedCount * 100.0 / c.Capacity : 0;
+                                var barColor = pct > 80 ? "bg-danger" : (pct > 50 ? "bg-warning" : "bg-success");
+                            }
+                            <div class="@barColor rounded-pill" style="height:8px; width:@pct%"></div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-center text-muted py-4">暂无试剂柜数据</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.LowStockReagents.Any())
+{
+    <div class="card border-0 shadow-sm mt-4" style="border-radius: 12px;">
+        <div class="card-header bg-warning bg-opacity-10 border-0 d-flex align-items-center gap-2">
+            <svg width="16" height="16" fill="#ffc107" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+            <span class="fw-semibold text-warning">库存预警列表</span>
+        </div>
+        <div class="card-body">
+            <table class="table table-sm small mb-0">
+                <thead>
+                    <tr>
+                        <th>试剂名称</th>
+                        <th>当前库存</th>
+                        <th>最低库存</th>
+                        <th>差额</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in Model.LowStockReagents)
+                    {
+                        var diff = (int)r.MinStock - (int)r.Stock;
+                        <tr>
+                            <td class="fw-semibold">@r.Name</td>
+                            <td><span class="text-danger fw-bold">@r.Stock @r.Unit</span></td>
+                            <td class="text-muted">@r.MinStock @r.Unit</td>
+                            <td class="text-danger">缺少 @diff @r.Unit</td>
+                            <td><span class="badge bg-danger">急需补充</span></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

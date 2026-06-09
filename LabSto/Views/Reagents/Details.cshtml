@@ -1,0 +1,52 @@
+﻿@model LabSto.Models.Entities.Reagent
+
+@{
+    ViewData["Title"] = "试剂详情";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="mb-0 text-primary fw-bold">试剂详情</h4>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">编辑</a>
+        <a asp-action="Index" class="btn btn-secondary btn-sm">返回</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="card border-0 shadow-sm" style="border-radius:12px;">
+            <div class="card-body">
+                <table class="table table-borderless mb-0 small">
+                    <tr><td class="text-muted" style="width:40%;">试剂名称</td><td class="fw-bold">@Model.Name</td></tr>
+                    <tr><td class="text-muted">CAS号</td><td class="font-monospace">@(string.IsNullOrEmpty(Model.CASNo) ? "-" : Model.CASNo)</td></tr>
+                    <tr><td class="text-muted">分类</td><td><span class="badge bg-secondary">@Model.Category</span></td></tr>
+                    <tr>
+                        <td class="text-muted">危险等级</td>
+                        <td>
+                            @{
+                                var dlClass = Model.DangerLevel switch { 1 => "bg-success", 2 => "bg-warning text-dark", 3 => "bg-danger", _ => "bg-secondary" };
+                            }
+                            <span class="badge @dlClass">@Model.DangerLevel</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted">当前库存</td>
+                        <td class="fw-bold @(Model.MinStock > 0 && Model.Stock <= Model.MinStock ? "text-danger" : "text-success")">
+                            @Model.Stock @Model.Unit
+                            @if (Model.MinStock > 0 && Model.Stock <= Model.MinStock)
+                            {
+                                <span class="badge bg-warning text-dark ms-1">低库存</span>
+                            }
+                        </td>
+                    </tr>
+                    <tr><td class="text-muted">最低库存</td><td>@(Model.MinStock > 0 ? Model.MinStock.ToString() : "未设置") @Model.Unit</td></tr>
+                    @if (!string.IsNullOrEmpty(Model.Remark))
+                    {
+                        <tr><td class="text-muted">备注</td><td>@Model.Remark</td></tr>
+                    }
+                    <tr><td class="text-muted">添加时间</td><td class="text-muted">@Model.CreateTime.ToString("yyyy-MM-dd HH:mm")</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

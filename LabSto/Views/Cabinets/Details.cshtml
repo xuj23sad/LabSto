@@ -1,0 +1,50 @@
+﻿@model LabSto.Models.Entities.Cabinet
+
+@{
+    ViewData["Title"] = "试剂柜详情";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="mb-0 text-primary fw-bold">试剂柜详情</h4>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">编辑</a>
+        <a asp-action="Index" class="btn btn-secondary btn-sm">返回</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="card border-0 shadow-sm" style="border-radius: 12px;">
+            <div class="card-body">
+                <table class="table table-borderless mb-0">
+                    <tr>
+                        <td class="text-muted small" style="width:40%;">柜编号</td>
+                        <td class="fw-semibold">@Model.CabinetNo</td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted small">存放位置</td>
+                        <td>@Model.Location</td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted small">总格位数</td>
+                        <td class="fw-semibold text-primary">@Model.Capacity 个</td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted small">存储类型</td>
+                        <td><span class="badge bg-info">@Model.StorageType</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-muted small">状态</td>
+                        <td>
+                            @{
+                                var sc = Model.Status switch { "正常" => "success", "维修中" => "warning", _ => "secondary" };
+                            }
+                            <span class="badge bg-@sc">@Model.Status</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <a asp-controller="CabinetSlots" asp-action="Manage" asp-route-cabinetId="@Model.Id" class="btn btn-primary mt-3 w-100">格位管理</a>
+    </div>
+</div>

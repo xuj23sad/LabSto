@@ -1,0 +1,62 @@
+﻿@model LabSto.Models.Entities.Cabinet
+
+@{
+    ViewData["Title"] = "编辑试剂柜";
+}
+
+<h4 class="mb-3">编辑试剂柜</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CabinetNo" class="control-label"></label>
+                <input asp-for="CabinetNo" class="form-control" />
+                <span asp-validation-for="CabinetNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">存储类型</label>
+                <select asp-for="StorageType" class="form-select">
+                    <option value="常温">常温</option>
+                    <option value="低温">低温（冷藏/冷冻）</option>
+                    <option value="防火">防火安全柜</option>
+                    <option value="避光">避光存储</option>
+                    <option value="干燥">干燥环境</option>
+                </select>
+                <span asp-validation-for="StorageType" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">状态</label>
+                <select asp-for="Status" class="form-select">
+                    <option value="正常">正常</option>
+                    <option value="维修中">维修中</option>
+                    <option value="停用">停用</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger small"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">保存修改</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,155 @@
+@model LabSto.Controllers.LogsController.LogsVM
+@{
+    ViewData["Title"] = "日志查看";
+    var levelColors = new Dictionary<string, string>
+    {
+        ["TRACE"] = "secondary",
+        ["DEBUG"] = "body-tertiary",
+        ["INFO"] = "primary",
+        ["WARN"] = "warning",
+        ["WARNING"] = "warning",
+        ["ERROR"] = "danger",
+        ["FATAL"] = "dark"
+    };
+}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="mb-0"><span class="text-primary fw-bold">日志查看</span></h4>
+        <small class="text-muted">系统运行日志，实时记录操作与异常</small>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+        <form method="get" class="d-flex align-items-center gap-2">
+            <select name="date" class="form-select form-select-sm" style="width: 160px;" onchange="this.form.submit()">
+                @if (!Model.LogFiles.Any())
+                {
+                    <option>暂无日志文件</option>
+                }
+                else
+                {
+                    @foreach (var f in Model.LogFiles)
+                    {
+                        var displayDate = f.Replace("nlog-all-", "").Replace("nlog-app-", "");
+                        @if (f == $"nlog-all-{Model.SelectedDate}" || f == $"nlog-app-{Model.SelectedDate}")
+                        {
+                            <option value="@displayDate" selected>@displayDate</option>
+                        }
+                        else
+                        {
+                            <option value="@displayDate">@displayDate</option>
+                        }
+                    }
+                }
+            </select>
+            <select name="level" class="form-select form-select-sm" style="width: 100px;" onchange="this.form.submit()">
+                @foreach (var lv in new[] { "All", "TRACE", "DEBUG", "INFO", "WARN", "ERROR" })
+                {
+                    @if (Model.SelectedLevel == lv)
+                    {
+                        <option value="@lv" selected>@lv</option>
+                    }
+                    else
+                    {
+                        <option value="@lv">@lv</option>
+                    }
+                }
+            </select>
+        </form>
+        @if (!string.IsNullOrEmpty(Model.SelectedDate))
+        {
+            <a asp-action="Download" asp-route-date="@($"nlog-all-{Model.SelectedDate}")" class="btn btn-sm btn-outline-secondary">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Zm0 3h6m-6-2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0v-2.25a.75.75 0 0 1 .75-.75h2.25Z"/>
+                </svg>
+                下载
+            </a>
+        }
+    </div>
+</div>
+
+@if (!Model.LogEntries.Any())
+{
+    <div class="text-center py-5">
+        <svg width="48" height="48" fill="none" stroke="#dee2e6" stroke-width="1.5" viewBox="0 0 24 24" class="mx-auto mb-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/>
+        </svg>
+        <div class="text-muted">暂无日志记录</div>
+        <div class="small text-muted mt-1">日志文件将保存至 %LOCALAPPDATA%\LabSto\logs\</div>
+    </div>
+}
+else
+{
+    <div class="card border-0 shadow-sm" style="border-radius: 12px;">
+        <div class="card-body p-0">
+            <div class="table-responsive" style="max-height: calc(100vh - 260px); overflow-y: auto;">
+                <table class="table table-hover table-sm mb-0" style="font-size: 0.82rem;">
+                    <thead style="position: sticky; top: 0; z-index: 1; background: #f8f9fa;">
+                        <tr>
+                            <th style="width: 180px; white-space: nowrap;">时间</th>
+                            <th style="width: 70px;">级别</th>
+                            <th style="width: 220px;">记录器</th>
+                            <th>消息</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var entry in Model.LogEntries)
+                        {
+                            var bgClass = entry.Level == "ERROR" || entry.Level == "FATAL"
+                                ? "table-danger"
+                                : (entry.Level == "WARN" || entry.Level == "WARNING" ? "table-warning" : "");
+
+                            var levelColor = levelColors.GetValueOrDefault(entry.Level, "secondary");
+
+                            <tr class="@bgClass">
+                                <td class="text-muted" style="white-space: nowrap; font-family: monospace;">
+                                    @entry.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")
+                                </td>
+                                <td>
+                                    <span class="badge bg-@levelColor" style="font-size: 0.7rem;">@entry.Level</span>
+                                </td>
+                                <td class="text-muted" style="font-family: monospace; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    title="@entry.Logger">
+                                    @entry.Logger
+                                </td>
+                                <td style="font-family: monospace; word-break: break-all;"
+                                    title="@entry.Message">
+                                    @entry.Message
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @if (Model.TotalPages > 1)
+    {
+        <div class="d-flex justify-content-between align-items-center mt-3">
+            <div class="text-muted small">
+                共 @Model.TotalPages 页，当前第 @Model.CurrentPage 页
+            </div>
+            <nav>
+                <ul class="pagination pagination-sm mb-0">
+                    <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="?page=1&date=@Model.SelectedDate&level=@Model.SelectedLevel">首页</a>
+                    </li>
+                    <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(Model.CurrentPage - 1)&date=@Model.SelectedDate&level=@Model.SelectedLevel">上一页</a>
+                    </li>
+                    @for (var i = Math.Max(1, Model.CurrentPage - 2); i <= Math.Min(Model.TotalPages, Model.CurrentPage + 2); i++)
+                    {
+                        <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="?page=@i&date=@Model.SelectedDate&level=@Model.SelectedLevel">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(Model.CurrentPage + 1)&date=@Model.SelectedDate&level=@Model.SelectedLevel">下一页</a>
+                    </li>
+                    <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                        <a class="page-link" href="?page=@Model.TotalPages&date=@Model.SelectedDate&level=@Model.SelectedLevel">末页</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    }
+}

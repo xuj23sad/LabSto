@@ -1,12 +1,445 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\DaZuoYe\\LabSto\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\cfgfile\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:cfgfile\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\controllers\\stockrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:controllers\\stockrecordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\views\\stockrecords\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:views\\stockrecords\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\data\\labstocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:data\\labstocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\controllers\\reagentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:controllers\\reagentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\controllers\\cabinetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:controllers\\cabinetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\migrations\\20260608091724_initialcreate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:migrations\\20260608091724_initialcreate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\migrations\\20260608074242_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:migrations\\20260608074242_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\views\\shared\\_navsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:views\\shared\\_navsidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\entities\\cabinet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\entities\\cabinet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\views\\statistics\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:views\\statistics\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\viewmodels\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\viewmodels\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\entities\\reagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\entities\\reagent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\viewmodels\\reagentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\viewmodels\\reagentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\entities\\stockrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\entities\\stockrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\entities\\cabinetslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\entities\\cabinetslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|d:\\dazuoye\\labsto\\models\\viewmodels\\stockrecordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D306054-732D-7D6C-AD9C-E9E8C0D2D08D}|LabSto.csproj|solutionrelative:models\\viewmodels\\stockrecordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StockRecordsController.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Controllers\\StockRecordsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StockRecordsController.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Controllers\\StockRecordsController.cs",
+              "RelativeToolTip": "Controllers\\StockRecordsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T06:51:54.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "nlog.config",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\CfgFile\\nlog.config",
+              "RelativeDocumentMoniker": "CfgFile\\nlog.config",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\CfgFile\\nlog.config",
+              "RelativeToolTip": "CfgFile\\nlog.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-06-09T02:02:43.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Views\\StockRecords\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\StockRecords\\Index.cshtml",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Views\\StockRecords\\Index.cshtml",
+              "RelativeToolTip": "Views\\StockRecords\\Index.cshtml",
+              "ViewState": "AgIAABQAAAAAAAAAAAAlwB4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-09T02:33:56.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T02:02:56.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LabStoContext.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Data\\LabStoContext.cs",
+              "RelativeDocumentMoniker": "Data\\LabStoContext.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Data\\LabStoContext.cs",
+              "RelativeToolTip": "Data\\LabStoContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T06:44:43.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReagentsController.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Controllers\\ReagentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReagentsController.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Controllers\\ReagentsController.cs",
+              "RelativeToolTip": "Controllers\\ReagentsController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAhwA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T01:08:24.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StatisticsController.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Controllers\\StatisticsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StatisticsController.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Controllers\\StatisticsController.cs",
+              "RelativeToolTip": "Controllers\\StatisticsController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAtwB4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T06:53:08.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAhwKsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T06:53:30.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CabinetsController.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Controllers\\CabinetsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CabinetsController.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Controllers\\CabinetsController.cs",
+              "RelativeToolTip": "Controllers\\CabinetsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAawBMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T06:44:35.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-08T07:05:59.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:17:44.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20260608091724_InitialCreate2.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Migrations\\20260608091724_InitialCreate2.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260608091724_InitialCreate2.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Migrations\\20260608091724_InitialCreate2.cs",
+              "RelativeToolTip": "Migrations\\20260608091724_InitialCreate2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T09:17:24.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Cabinet.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\Cabinet.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Cabinet.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\Cabinet.cs",
+              "RelativeToolTip": "Models\\Entities\\Cabinet.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:39:56.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20260608074242_InitialCreate.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Migrations\\20260608074242_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260608074242_InitialCreate.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Migrations\\20260608074242_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20260608074242_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T07:42:42.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_NavSidebar.cshtml",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Views\\Shared\\_NavSidebar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_NavSidebar.cshtml",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Views\\Shared\\_NavSidebar.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_NavSidebar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-08T07:00:59.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-08T06:57:42.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Views\\Statistics\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Statistics\\Index.cshtml",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Views\\Statistics\\Index.cshtml",
+              "RelativeToolTip": "Views\\Statistics\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-08T06:56:44.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-08T06:57:19.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RegisterVM.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\RegisterVM.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\RegisterVM.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\RegisterVM.cs",
+              "RelativeToolTip": "Models\\ViewModels\\RegisterVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:35:44.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Reagent.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\Reagent.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Reagent.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\Reagent.cs",
+              "RelativeToolTip": "Models\\Entities\\Reagent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:25:40.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReagentVM.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\ReagentVM.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\ReagentVM.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\ReagentVM.cs",
+              "RelativeToolTip": "Models\\ViewModels\\ReagentVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:33:22.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "StockRecord.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\StockRecord.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\StockRecord.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\StockRecord.cs",
+              "RelativeToolTip": "Models\\Entities\\StockRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:28:24.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CabinetSlot.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\CabinetSlot.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\CabinetSlot.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\Entities\\CabinetSlot.cs",
+              "RelativeToolTip": "Models\\Entities\\CabinetSlot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:27:41.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\LoginVM.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\LoginVM.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\LoginVM.cs",
+              "RelativeToolTip": "Models\\ViewModels\\LoginVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:34:56.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "StockRecordVM.cs",
+              "DocumentMoniker": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\StockRecordVM.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\StockRecordVM.cs",
+              "ToolTip": "D:\\DaZuoYe\\LabSto\\Models\\ViewModels\\StockRecordVM.cs",
+              "RelativeToolTip": "Models\\ViewModels\\StockRecordVM.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T00:34:23.174Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<LabSto.Models.Entities.Reagent>
+
+@{
+    ViewData["Title"] = "试剂管理";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="mb-0"><span class="text-primary fw-bold">试剂管理</span></h4>
+        <small class="text-muted">共 @Model.Count() 种试剂</small>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        新增试剂
+    </a>
+</div>
+
+<div class="card border-0 shadow-sm" style="border-radius: 12px;">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead class="table-light small">
+                    <tr>
+                        <th>试剂名称</th>
+                        <th>CAS号</th>
+                        <th>分类</th>
+                        <th>危险等级</th>
+                        <th>库存</th>
+                        <th>单位</th>
+                        <th>最低库存</th>
+                        <th>备注</th>
+                        <th class="text-end">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="small">
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="9" class="text-center text-muted py-4">暂无试剂数据，请先添加</td>
+                        </tr>
+                    }
+                    @foreach (var item in Model)
+                    {
+                        var isLowStock = item.MinStock > 0 && item.Stock <= item.MinStock;
+                        <tr class="@(isLowStock ? "table-warning" : "")">
+                            <td class="fw-semibold text-truncate" style="max-width:120px;" title="@item.Name">@item.Name</td>
+                            <td class="text-muted font-monospace">@item.CASNo</td>
+                            <td><span class="badge bg-secondary">@item.Category</span></td>
+                            <td>
+                                @{
+                                    var dangerClass = item.DangerLevel switch
+                                    {
+                                        1 => "bg-success",
+                                        2 => "bg-warning text-dark",
+                                        3 => "bg-danger",
+                                        _ => "bg-secondary"
+                                    };
+                                }
+                                <span class="badge @dangerClass">@item.DangerLevel</span>
+                            </td>
+                            <td class="@(isLowStock ? "text-danger fw-bold" : "fw-semibold")">
+                                @if (isLowStock)
+                                {
+                                    <svg width="12" height="12" fill="#ffc107" viewBox="0 0 16 16" class="me-1"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+                                }
+                                @item.Stock
+                            </td>
+                            <td class="text-muted">@item.Unit</td>
+                            <td class="text-muted">@item.MinStock</td>
+                            <td class="text-muted text-truncate" style="max-width:80px;" title="@item.Remark">@item.Remark</td>
+                            <td class="text-end">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">详情</a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">编辑</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">删除</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

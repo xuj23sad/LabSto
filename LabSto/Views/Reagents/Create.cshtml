@@ -1,0 +1,89 @@
+﻿@model LabSto.Models.Entities.Reagent
+
+@{
+    ViewData["Title"] = "新增试剂";
+}
+
+<h4 class="mb-3">新增试剂</h4>
+<hr />
+<div class="row">
+    <div class="col-lg-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label class="form-label">试剂名称 *</label>
+                    <input asp-for="Name" class="form-control" placeholder="如：乙醇、无水氯化钠" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">CAS号</label>
+                    <input asp-for="CASNo" class="form-control font-monospace" placeholder="如：64-17-5" />
+                    <span asp-validation-for="CASNo" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">分类 *</label>
+                    <select asp-for="Category" class="form-select">
+                        <option value="">-- 请选择 --</option>
+                        <option value="有机试剂">有机试剂</option>
+                        <option value="无机试剂">无机试剂</option>
+                        <option value="分析试剂">分析试剂</option>
+                        <option value="生化试剂">生化试剂</option>
+                        <option value="标准物质">标准物质</option>
+                        <option value="危险品">危险品</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <span asp-validation-for="Category" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">危险等级</label>
+                    <select asp-for="DangerLevel" class="form-select">
+                        <option value="0">0 - 安全</option>
+                        <option value="1">1 - 轻度危险</option>
+                        <option value="2">2 - 中度危险</option>
+                        <option value="3">3 - 高度危险</option>
+                    </select>
+                    <span asp-validation-for="DangerLevel" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">库存</label>
+                    <input asp-for="Stock" class="form-control" type="number" step="0.01" value="0" />
+                    <span asp-validation-for="Stock" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">单位</label>
+                    <select asp-for="Unit" class="form-select">
+                        <option value="瓶">瓶</option>
+                        <option value="g">g</option>
+                        <option value="mL">mL</option>
+                        <option value="kg">kg</option>
+                        <option value="L">L</option>
+                        <option value="个">个</option>
+                    </select>
+                    <span asp-validation-for="Unit" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">最低库存预警</label>
+                    <input asp-for="MinStock" class="form-control" type="number" step="0.01" placeholder="留空则不预警" />
+                    <span asp-validation-for="MinStock" class="text-danger small"></span>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">备注</label>
+                    <input asp-for="Remark" class="form-control" placeholder="可选" />
+                    <span asp-validation-for="Remark" class="text-danger small"></span>
+                </div>
+            </div>
+            <div class="mt-4 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    保存
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">返回列表</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

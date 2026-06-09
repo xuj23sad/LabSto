@@ -1,0 +1,265 @@
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+    var userName = User.Identity?.Name ?? "用户";
+    var userRole = User.Claims.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Role)?.Value ?? "普通用户";
+}
+
+<style>
+    .sidebar {
+        width: 220px;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #0d6efd 0%, #0a58ca 100%);
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+        z-index: 100;
+        box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+    }
+    .sidebar-brand {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .sidebar-brand-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sidebar-brand-text {
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    .sidebar-brand-sub {
+        color: rgba(255,255,255,0.6);
+        font-size: 0.7rem;
+        display: block;
+    }
+    .sidebar-user {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .sidebar-user-name {
+        color: white;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    .sidebar-user-role {
+        color: rgba(255,255,255,0.5);
+        font-size: 0.75rem;
+    }
+    .sidebar-section-title {
+        padding: 1rem 1.5rem 0.5rem;
+        color: rgba(255,255,255,0.4);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+    }
+    .sidebar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar-nav-item {
+        padding: 0;
+    }
+    .sidebar-nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 1.5rem;
+        color: rgba(255,255,255,0.75);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: all 0.2s;
+        border-left: 3px solid transparent;
+    }
+    .sidebar-nav-link:hover {
+        color: white;
+        background: rgba(255,255,255,0.1);
+    }
+    .sidebar-nav-link.active {
+        color: white;
+        background: rgba(255,255,255,0.15);
+        border-left-color: white;
+        font-weight: 600;
+    }
+    .sidebar-nav-link .nav-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        opacity: 0.8;
+    }
+    .sidebar-nav-link.active .nav-icon {
+        opacity: 1;
+    }
+    .sidebar-divider {
+        height: 1px;
+        background: rgba(255,255,255,0.1);
+        margin: 0.5rem 1.5rem;
+    }
+    .sidebar-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin-top: auto;
+    }
+    .sidebar-footer a {
+        color: rgba(255,255,255,0.5);
+        text-decoration: none;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s;
+    }
+    .sidebar-footer a:hover {
+        color: rgba(255,255,255,0.9);
+    }
+    .main-content {
+        margin-left: 220px;
+        min-height: 100vh;
+    }
+    .top-bar {
+        background: white;
+        border-bottom: 1px solid #e9ecef;
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .top-bar-left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .top-bar-title {
+        font-size: 0.95rem;
+        color: #495057;
+    }
+    .top-bar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .user-menu {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        position: relative;
+    }
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        background: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+</style>
+
+<div class="sidebar">
+    <a asp-controller="Home" asp-action="Index" class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+            <svg width="20" height="20" fill="white" viewBox="0 0 16 16">
+                <path d="M2 1.5A1.5 1.5 0 0 1 3.5 0h9A1.5 1.5 0 0 1 14 1.5v1a.5.5 0 0 1-1 0V1.5h-10A1.5 1.5 0 0 1 1.5 0v1A.5.5 0 0 1 1 1.5V1.5zM1 3v10a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 14.5 13V3H1z"/>
+            </svg>
+        </div>
+        <div>
+            <span class="sidebar-brand-text">LabSto</span>
+            <span class="sidebar-brand-sub">试剂管理系统</span>
+        </div>
+    </a>
+
+    <div class="sidebar-user">
+        <div class="sidebar-user-name">@userName</div>
+        <div class="sidebar-user-role">@userRole</div>
+    </div>
+
+    <div class="sidebar-section-title">导航</div>
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+            <a asp-controller="Home" asp-action="Index" class="sidebar-nav-link @(currentController == "Home" ? "active" : "")">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+                </svg>
+                首页
+            </a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a asp-controller="Statistics" asp-action="Index" class="sidebar-nav-link @(currentController == "Statistics" ? "active" : "")">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125z"/>
+                </svg>
+                数据统计
+            </a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a asp-controller="Logs" asp-action="Index" class="sidebar-nav-link @(currentController == "Logs" ? "active" : "")">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/>
+                </svg>
+                日志查看
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-section-title">库存管理</div>
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+            <a asp-controller="Reagents" asp-action="Index" class="sidebar-nav-link @(currentController == "Reagents" ? "active" : "")">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 1-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                </svg>
+                试剂管理
+            </a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a asp-controller="StockRecords" asp-action="Index" class="sidebar-nav-link @(currentController == "StockRecords" ? "active" : "")">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+                </svg>
+                出入库记录
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-section-title">设备管理</div>
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+            <a asp-controller="Cabinets" asp-action="Index" class="sidebar-nav-link @(currentController == "Cabinets" ? "active" : "")">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/>
+                </svg>
+                试剂柜管理
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-footer">
+        <form asp-action="Logout" asp-controller="Account" method="post" id="logoutForm">
+            <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;" title="退出登录">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"/>
+                </svg>
+                退出登录
+            </a>
+        </form>
+    </div>
+</div>

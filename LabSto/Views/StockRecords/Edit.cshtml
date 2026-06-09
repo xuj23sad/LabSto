@@ -1,0 +1,48 @@
+﻿@model LabSto.Models.Entities.StockRecord
+
+@{
+    ViewData["Title"] = "编辑记录";
+}
+
+<h4 class="mb-3">编辑出入库记录</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreateTime" />
+            <div class="mb-3">
+                <label class="form-label">试剂</label>
+                <select asp-for="ReagentId" class="form-select" asp-items="ViewBag.ReagentId"></select>
+                <span asp-validation-for="ReagentId" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">类型</label>
+                <select asp-for="Type" class="form-select">
+                    <option value="入库">入库</option>
+                    <option value="出库">出库</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">数量</label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger small"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">备注</label>
+                <input asp-for="Remark" class="form-control" />
+                <span asp-validation-for="Remark" class="text-danger small"></span>
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">保存修改</button>
+                <a asp-action="Index" class="btn btn-secondary">返回列表</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

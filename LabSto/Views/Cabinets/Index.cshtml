@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LabSto.Models.Entities.Cabinet>
+
+@{
+    ViewData["Title"] = "试剂柜管理";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="mb-0"><span class="text-primary fw-bold">试剂柜管理</span></h4>
+        <small class="text-muted">共 @Model.Count() 个试剂柜</small>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        新增试剂柜
+    </a>
+</div>
+
+<div class="row g-3">
+    @if (!Model.Any())
+    {
+        <div class="col-12">
+            <div class="alert alert-info">暂无试剂柜，请先添加</div>
+        </div>
+    }
+    @foreach (var item in Model)
+    {
+        var statusColor = item.Status switch
+        {
+            "正常" => "success",
+            "维修中" => "warning",
+            "停用" => "secondary",
+            _ => "secondary"
+        };
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100" style="border-radius: 12px;">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title mb-0 fw-bold">@item.CabinetNo</h5>
+                        <span class="badge bg-@statusColor">@item.Status</span>
+                    </div>
+                    <div class="small text-muted mb-2">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="me-1"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg>
+                        @item.Location
+                    </div>
+                    <div class="row g-2 small">
+                        <div class="col-6">
+                            <div class="p-2 bg-light rounded text-center">
+                                <div class="fw-bold text-primary">@item.Capacity</div>
+                                <div class="text-muted" style="font-size:0.7rem;">总格位数</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-2 bg-light rounded text-center">
+                                <div class="fw-bold" style="color:#198754;">@item.StorageType</div>
+                                <div class="text-muted" style="font-size:0.7rem;">存储类型</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 pt-0">
+                    <div class="d-flex gap-1">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary flex-grow-1">详情</a>
+                        <a asp-controller="CabinetSlots" asp-action="Manage" asp-route-cabinetId="@item.Id" class="btn btn-sm btn-outline-primary flex-grow-1">格位管理</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary flex-grow-1">编辑</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger flex-grow-1">删除</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
